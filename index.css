@@ -1,0 +1,332 @@
+/* Reset and Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8f3dc;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;  /* Set background to white */
+    color: #19d087;
+    position: relative;  /* Initially, navbar is not fixed */
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;  /* Smooth transition for background, box-shadow, and transform */
+}
+
+/* Sticky Navbar */
+.navbar.sticky {
+    position: fixed;  /* Fix the navbar to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(0);  /* Initially, slide down from top */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Add stronger shadow when sticky */
+    transition: transform 0.3s ease-in-out;  /* Apply smooth transition for sliding effect */
+}
+
+/* Navbar Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #081c15;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1b4332;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Hover Effects for Nav Items */
+.nav-links a:hover {
+   
+    color: #1b4332;
+    transform: scale(1.5);  /* Enlarge the nav item on hover */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #1b4332;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;  /* Ensure white background for mobile */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 15px;
+        text-align: left;
+    }
+}
+
+/* Add padding to body to prevent content from hiding under navbar */
+body {
+    padding-top: 60px;  /* Adjust to match the height of the fixed navbar */
+}
+
+
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Changed the height to 70vh for the carousel */
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%; /* Each slide takes 100% of the container width */
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;  /* Ensures image takes full width */
+    height: 70vh;  /* Changed the height to 70vh */
+    object-fit: cover;  /* Ensures image scales and covers the area without distortion */
+}
+
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Card Section */
+.card-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #1b4332;
+    font-weight: bold;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+
+    .card-section {
+        padding: 10px;
+    }
+}
+/* Footer Styles */
+/* Footer Styles */
+/* Footer Styles */
+.footer {
+    background-color: #2d6a4f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Top Section with Logo and Quote */
+.footer-top {
+    margin-bottom: 20px;
+}
+
+/* Logo and Quote in Single Line */
+.footer-logo-quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;  /* Circle shape */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; /* Space between logo and quote */
+}
+
+.footer-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensure image covers the circle properly */
+}
+
+.footer-quote p {
+    font-size: 20px;
+    font-style: italic;
+    color: white;
+    margin: 0;
+    max-width: 600px; /* Limit quote width */
+    text-align: left;
+}
+
+/* Bottom Section with About Us and Contact Us */
+.footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 45%;
+    margin: 10px 0;
+}
+
+.footer-section h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 16px;
+}
+
+.footer-section a {
+    color: #d8f3dc;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-logo-quote {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+

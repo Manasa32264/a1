@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select District and Item</title>
+    <link rel="stylesheet" href="Rate2.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="l.png" alt="Logo" class="logo">
+            <div class="title">AgriKishan</div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="regi1.html">Register</a>
+            <a href="regi2.html">Login</a>
+            <a href="Rate1.html">Rate</a>
+            <a href="fertilizer11.html">Fertilizer</a>
+            <a href="sell.html">Buy/Sell</a>
+            <a href="Climate1.html">Climate</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Select District and Item</h1>
+        
+        <div class="form">
+            <div class="input-group">
+                <label for="district">Select District:</label>
+                <select id="district" name="district">
+                    <option value="" disabled selected>Select District</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mysore">Mysore</option>
+                    <option value="Hubli">Hubli</option>
+                    <option value="Mangalore">Mangalore</option>
+                    <option value="Bellary">Bellary</option>
+                    <option value="Tumkur">Tumkur</option>
+                    <option value="Hassan">Hassan</option>
+                    <option value="Chikmagalur">Chikmagalur</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="item">Select Item:</label>
+                <select id="item" name="item">
+                    <option value="" disabled selected>Select Item</option>
+                    <option value="potato">Potato</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="onion">Onion</option>
+                    <option value="rice">Rice</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="corn">Corn</option>
+                </select>
+            </div>
+
+            <button id="submit" onclick="submitSelection()">Submit</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Top Section: Logo and Quote -->
+        <div class="footer-top">
+            <div class="footer-logo-quote">
+                <div class="footer-logo">
+                    <img src="l.png" alt="Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-quote">
+                    <p>"A nation's growth begins with the care of its fields."</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Section: About Us and Contact Us -->
+        <div class="footer-bottom">
+            <div class="footer-section about-us">
+                <h3>About Us</h3>
+                <p>AgriKishan is dedicated to supporting farmers and agricultural businesses by providing valuable resources, tools, and insights. Our platform aims to empower farmers and help them grow their businesses sustainably.</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>Contact Us</h3>
+                <p><strong>Helpline:</strong> +1 234 567 890</p>
+                <p><strong>Email:</strong> <a href="mailto:support@agrikishan.com">support@agrikishan.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function submitSelection() {
+            const district = document.getElementById("district").value;
+            const item = document.getElementById("item").value;
+            
+            if (district && item) {
+                // Store values in localStorage
+                localStorage.setItem("district", district);
+                localStorage.setItem("item", item);
+
+                // Redirect to Rate3.html
+                window.location.href = 'Rate31.html';
+            } else {
+                alert("Please select both a district and an item.");
+            }
+        }
+    </script>
+</body>
+</html>

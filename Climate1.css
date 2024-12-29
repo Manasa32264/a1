@@ -1,0 +1,98 @@
+/* Root color variables */
+:root {
+    --light-green: #D8F3DC;
+    --pale-green: #B7E4C7;
+    --mint-green: #95D5B2;
+    --forest-green: #74C69D;
+    --medium-green: #52B788;
+    --dark-green: #40916C;
+    --deep-green: #2D6A4F;
+    --darker-green: #1B4332;
+    --darkest-green: #081C15;
+}
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: var(--pale-green);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 600px;
+    text-align: center;
+    height: 500px; /* Increased height */
+}
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    color: var(--darkest-green);
+    margin-bottom: 30px;
+}
+
+/* Form container */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Input group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    font-size: 1.1rem;
+    color: var(--forest-green);
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid var(--forest-green);
+    border-radius: 5px;
+    background-color: var(--mint-green);
+    color: var(--deep-green);
+    transition: background-color 0.3s;
+}
+
+select:hover {
+    background-color: var(--pale-green);
+}
+
+/* Button */
+button {
+    padding: 15px 25px;
+    background-color: var(--forest-green);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--dark-green);
+}

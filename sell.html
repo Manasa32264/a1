@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Selling Inquiry</title>
+    <style>
+        body {display: flex;
+            align-items: center;    
+            font-family: Arial, sans-serif;
+            background-color: #79b379;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .container {
+           
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .seller-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .seller-info img {
+            width: 100px; /* Adjust the size as needed */
+            height: auto;
+            margin-left: 20px;
+        }
+        .link {
+            color: #007BFF;
+            text-decoration: none;
+            margin-top: 10px;
+            display: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function updateImage() {
+            const vegetableSelect = document.getElementById('vegetable');
+            const image = document.getElementById('vegetable-image');
+            const selectedVegetable = vegetableSelect.value;
+
+            // Update the image source based on the selected vegetable
+            if (selectedVegetable) {
+                image.src = selectedVegetable + '.jpg'; // Assuming images are named as carrot.jpg, potato.jpg, etc.
+                image.alt = selectedVegetable.charAt(0).toUpperCase() + selectedVegetable.slice(1);
+            } else {
+                image.src = ''; // Clear the image if no vegetable is selected
+            }
+        }
+
+        function handleSellProductChange() {
+            const sellYesRadio = document.getElementById('sell-yes');
+            const link = document.getElementById('sell-link');
+
+            // If 'Yes' is selected, display the link to go to the product form
+            if (sellYesRadio.checked) {
+                link.style.display = 'inline'; // Show the link
+            } else {
+                link.style.display = 'none'; // Hide the link
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Vegetable Selling Inquiry</h1>
+    <form>
+        <label>Are you willing to sell a product?</label>
+        <input type="radio" id="sell-yes" name="sell-product" value="yes" onclick="handleSellProductChange()"> Yes
+        <input type="radio" id="sell-no" name="sell-product" value="no" onclick="handleSellProductChange()"> No
+
+        <!-- Link to second page if 'Yes' is selected -->
+        <div>
+            <a href="sellredirct.html" id="sell-link" class="link">Click here to enter product details</a>
+        </div>
+
+        <label for="vegetable">Select Vegetable:</label>
+        <select id="vegetable" name="vegetable" required onchange="updateImage()">
+            <option value="">Select a vegetable...</option>
+            <option value="carrot">Carrot</option>
+            <option value="potato">Potato</option>
+            <option value="tomato">Tomato</option>
+            <option value="cabbage">Cabbage</option>
+            <option value="spinach">Spinach</option>
+            <option value="onion">Onion</option>
+        </select>
+
+        <h2>Seller Information</h2>
+        <div class="seller-info">
+            <div>
+                <label for="name">Name:John Doe</label>
+                
+
+                <label for="contact">Contact:+1234567890</label>
+                
+
+                <label for="district">District:Green Valley</label>
+                
+                <label for="location">Location:Farm 12, Green Road</label>
+                
+            </div>
+            <!-- <img id="vegetable-image" src="img2.jpg" alt="" /> -->
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

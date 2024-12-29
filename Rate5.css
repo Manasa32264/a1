@@ -1,0 +1,211 @@
+:root {
+    --light-green: #D8F3DC;
+    --pale-green: #B7E4C7;
+    --mint-green: #95D5B2;
+    --forest-green: #74C69D;
+    --medium-green: #52B788;
+    --dark-green: #40916C;
+    --deep-green: #2D6A4F;
+    --darker-green: #1B4332;
+    --darkest-green: #081C15;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-green);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    color: var(--dark-green);
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--deep-green);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    color: var(--darker-green);
+    transform: scale(1.2);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--darker-green);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 15px;
+        text-align: left;
+    }
+}
+
+/* Main Content Styles */
+.container {
+    text-align: center;
+    background: var(--pale-green);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+    border: 2px solid var(--medium-green);
+}
+
+h1 {
+    color: var(--darkest-green);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: var(--deep-green);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: var(--forest-green);
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: var(--deep-green);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--deep-green);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-logo-quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.footer-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-quote p {
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Footer Bottom Layout */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;  /* Add gap between sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    text-align: left; /* Align text to the left */
+}
+
+.footer-section {
+    width: 48%;  /* Width to make them next to each other */
+    min-width: 250px;  /* Ensure there's enough space */
+    margin-bottom: 20px; /* Spacing between sections */
+}
+
+footer p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+}

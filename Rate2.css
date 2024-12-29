@@ -1,0 +1,261 @@
+/* Root color variables */
+:root {
+    --light-green: #D8F3DC;
+    --pale-green: #B7E4C7;
+    --mint-green: #95D5B2;
+    --forest-green: #74C69D;
+    --medium-green: #52B788;
+    --dark-green: #40916C;
+    --deep-green: #2D6A4F;
+    --darker-green: #1B4332;
+    --darkest-green: #081C15;
+}
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    color: var(--dark-green);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--deep-green);
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--darker-green);
+}
+
+/* Main Content */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the footer is spaced from the content */
+    min-height: 100vh;
+    align-items: center; /* Center the content horizontally */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%; /* Ensure it takes full width */
+}
+
+.container {
+    background-color: var(--pale-green);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 50px; /* Adds space below the navbar */
+    margin-bottom: 50px; /* Ensures space above the footer */
+}
+
+/* Additional necessary CSS */
+
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    color: var(--darkest-green);
+    margin-bottom: 20px;
+}
+
+/* Form container */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch; /* Makes input groups take up full width */
+}
+
+/* Input group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Space between label and select */
+}
+
+label {
+    font-size: 1.1rem;
+    color: var(--forest-green);
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid var(--forest-green);
+    border-radius: 5px;
+    background-color: var(--mint-green);
+    color: var(--deep-green);
+    transition: background-color 0.3s;
+}
+
+select:hover {
+    background-color: var(--pale-green);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--dark-green);
+}
+
+/* Button */
+button {
+    padding: 15px 25px;
+    background-color: var(--forest-green);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Button takes full width */
+}
+
+button:hover {
+    background-color: var(--dark-green);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--deep-green);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.footer-logo-img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    max-width: 45%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer-section a {
+    color: var(--pale-green);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        max-width: 100%;
+    }
+
+    /* Navbar for small screens */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 15px;
+        text-align: left;
+    }
+}

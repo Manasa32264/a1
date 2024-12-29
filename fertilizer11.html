@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESTICIDE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9; 
+            color: #2e7d32; 
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #1b5e20; 
+        }
+        .fertilizer {
+            border: 1px solid #a5d6a7; 
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #c8e6c9; /* Light green background for each fertilizer */
+            display: flex; /* Use flexbox for layout */
+            align-items: center; 
+            flex-wrap: wrap; 
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-box {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #a5d6a7;
+            border-radius: 5px;
+        }
+        .fertilizer img {
+            max-width:200px; 
+            height: auto;
+            border-radius: 5px;
+        }
+        .fertilizer im {
+            max-width: 150px; 
+            height: auto;
+            border-radius: 5px;
+        }
+        .details {
+            flex: 1;
+            margin-left: 20px; 
+        }
+        .price {
+            font-weight: bold;
+            color: #388e3c; 
+            margin: 10px 0;
+        }
+        .description {
+            margin: 10px 0;
+        }
+        .features {
+            list-style-type: disc;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .secondary-image {
+            margin-left: 20px; 
+            max-width: 300px; 
+            max-height: 200px;
+            height: auto;
+        }
+        .scanner-container {
+            width: 250px;
+            height: 250px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            position: relative;
+            background: #f5f5f5;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .scan-area {
+            width: 280px;
+            height: 380px;
+            margin: 10px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scan-line {
+            height: 2px;
+            width: 100%;
+            background: #ff0000;
+            position: absolute;
+            animation: scan 3s linear infinite;
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+        }
+
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .scan-button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .scan-button:hover {
+            background: #1976D2;
+        }
+
+        .status {
+            margin-top: 10px;
+            color: #666;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes scan {
+            0% {
+                top: 0;
+            }
+            50% {
+                top: 100%;
+            }
+            100% {
+                top: 0;
+            }
+        }
+
+        /* Add overlay effect */
+        .scan-area::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, 
+                rgba(255,255,255,0.2) 0%,
+                rgba(255,255,255,0.1) 50%,
+                rgba(255,255,255,0.2) 100%);
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>PESTICIDE</h1>
+    <div class="search-container">
+        <input type="text" id="searchBox" class="search-box" placeholder="Search for pesticide..." onkeyup="filterFertilizers()">
+    </div>
+    <div class="scanner-container">
+        <div class="scan-area">
+            <div class="scan-line"></div>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="scan-button" onclick="alert('Starting scan...')">Start Scan</button>
+        <div class="status">Ready to scan</div>
+    </div>
+
+    <div class="fertilizer">
+        <img src="fir1.jpg" alt="Organic Fertilizer">
+        <div class="details">
+            <h2>Organic pesticide</h2>
+            <p class="price">₹1500.99</p>
+            <p class="description">A natural fertilizer made from plant and animal materials, perfect for enriching soil health.</p>
+            <ul class="features">
+                <li>100% organic ingredients</li>
+                <li>Improves soil structure</li>
+                <li>Enhances microbial activity</li>
+            </ul>
+        </div>
+        <img class="secondary-image" src="img2.jpg" alt="Fertilizer">
+    </div>
+
+    <div class="fertilizer">
+        <img src="fir2.jpg" alt="Compost Fertilizer">
+        <div class="details">
+            <h2>Compost pesticide</h2>
+            <p class="price">₹1200.49</p>
+            <p class="description">Rich in nutrients, compost fertilizer is made from decomposed organic matter, ideal for all types of plants.</p>
+            <ul class="features">
+                <li>Improves soil fertility</li>
+                <li>Reduces waste</li>
+                <li>Encourages healthy plant growth</li>
+            </ul>
+        </div>
+        <img class="secondary-image" src="img3.jpg" alt="Compost Fertilizer">
+    </div>
+
+    <div class="fertilizer">
+        <img src="gypsum.jpg" alt="Granular Fertilizer">
+        <div class="details">
+            <h2>Granular pesticide</h2>
+            <p class="price">₹1800.75</p>
+            <p class="description">A slow-release fertilizer that provides nutrients over time, suitable for various plants.</p>
+            <ul class="features">
+                <li>Easy to apply</li>
+                <li>Long-lasting effects</li>
+                <li>Suitable for lawns and gardens</li>
+            </ul>
+        </div>
+        <img class="secondary-image" src="fir3.jpg" alt="Granular Fertilizer">
+    </div>
+
+    <div class="fertilizer">
+        <img src="fir4.jpg" alt="Liquid Fertilizer">
+        <div class="details">
+            <h2>Liquid pesticide</h2>
+            <p class="price">₹1000.99</p>
+            <p class="description">Quickly absorbed by plants, liquid fertilizer is perfect for fast-acting nutrient delivery.</p>
+            <ul class="features">
+                <li>Fast absorption</li>
+                <li>Ideal for container plants</li>
+                <li>Easy to mix and apply</li>
+            </ul>
+        </div>
+        <img class="secondary-image" src="img5.jpg" alt="Liquid Fertilizer">
+    </div>
+
+    <div class="fertilizer">
+        <img src="fir5.jpg" alt="Slow-Release Fertilizer">
+        <div class="details">
+            <h2>Slow-Release pesticide</h2>
+            <p class="price">₹200.00</p>
+            <p class="description">Designed to release nutrients gradually, this fertilizer is perfect for long-term plant care.</p>
+            <ul class="features">
+                <li>Gradual nutrient release</li>
+                <li>Reduces frequency of fertilization</li>
+                </ul>
+                </div>
+                <img src="rice.jpg" alt="fast fetilizer">
+                </div>
+                </body>
+                </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Display</title>
+    <link rel="stylesheet" href="Rate1.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="l.png" alt="Logo" class="logo">
+            <div class="title">AgriKishan</div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="regi1.html">Register</a>
+            <a href="regi2.html">Login</a>
+            <a href="Rate1.html">Rate</a>
+            <a href="fertilizer11.html">Fertilizer</a>
+            <a href="sell.html">Buy/Sell</a>
+            <a href="Climate1.html">Climate</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Crop Price Information</h1>
+        <br>
+        <h2>Click on the rate to see the Price</h2>
+        <br>
+        <div class="rate-section">
+            <div class="rate-card" id="presentRateCard" onclick="showDetails('Present Rate')">
+                <h2>Present Rate</h2>
+            </div>
+            <div class="rate-card" id="predictionRateCard" onclick="showDetails('Prediction Rate')">
+                <h2>Prediction Rate</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Top Section with Logo and Quote -->
+        <div class="footer-top">
+            <div class="footer-logo-quote">
+                <div class="footer-logo">
+                    <img src="l.png" alt="Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-quote">
+                    <p>"A nation's growth begins with the care of its fields."</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Section with About Us and Contact Us -->
+        <div class="footer-bottom">
+            <div class="footer-section about-us">
+                <h3>About Us</h3>
+                <p>AgriKishan is dedicated to supporting farmers and agricultural businesses by providing valuable resources, tools, and insights. Our platform aims to empower farmers and help them grow their businesses sustainably.</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>Contact Us</h3>
+                <p><strong>Helpline:</strong> +1 234 567 890</p>
+                <p><strong>Email:</strong> <a href="mailto:support@agrikishan.com">support@agrikishan.com</a></p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        function showDetails(rateType) {
+            if (rateType === 'Present Rate') {
+                // Redirect to Rate2.html when Present Rate is clicked
+                window.location.href = 'Rate2.html';
+            } else if (rateType === 'Prediction Rate') {
+                // Redirect to Rate4.html when Prediction Rate is clicked
+                window.location.href = 'Rate4.html';
+            } else {
+                alert(rateType + " clicked!");
+            }
+        }
+    </script>
+</body>
+</html>

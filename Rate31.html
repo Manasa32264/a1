@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected District, Item, and Cost</title>
+    <link rel="stylesheet" href="Rate3.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Selection</h1>
+        
+        <div class="form">
+            <div class="input-group">
+                <label for="district">District:</label>
+                <p id="districtDisplay"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="item">Item:</label>
+                <p id="itemDisplay"></p>
+            </div>
+            <div class="input-group">
+                <label for="cost">Estimated Cost:</label>
+                <p id="costDisplay"></p>
+            </div>
+        </div>
+
+        <script>
+            // Get the stored district and item from localStorage
+            const district = localStorage.getItem("district");
+            const item = localStorage.getItem("item");
+
+            // Display the selected district and item
+            if (district && item) {
+                document.getElementById("districtDisplay").innerText = district;
+                document.getElementById("itemDisplay").innerText = item.charAt(0).toUpperCase() + item.slice(1);
+                const cost = getCost(item);
+                document.getElementById("costDisplay").innerText = `₹${cost}`;
+            } else {
+                alert("No data found. Please go back and select a district and item.");
+            }
+
+            function getCost(item) {
+                const itemCosts = {
+                    potato: 30,
+                    tomato: 40,
+                    onion: 50,
+                    rice: 60,
+                    wheat: 70,
+                    corn: 80
+                };
+                return itemCosts[item] || 0; // Default to 0 if no item found
+            }
+        </script>
+    </div>
+</body>
+</html>

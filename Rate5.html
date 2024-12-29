@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected District, Item, and Cost</title>
+    <link rel="stylesheet" href="Rate5.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="l.png" alt="Logo" class="logo">
+            <div class="title">AgriKishan</div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="regi1.html">Register</a>
+            <a href="regi2.html">Login</a>
+            <a href="Rate1.html">Rate</a>
+            <a href="fertilizer11.html">Fertilizer</a>
+            <a href="sell.html">Buy/Sell</a>
+            <a href="Climate1.html">Climate</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Your Selection</h1>
+        
+        <div class="form">
+            <div class="input-group">
+                <label for="district">District:</label>
+                <p id="districtDisplay"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="item">Item:</label>
+                <p id="itemDisplay"></p>
+            </div>
+            <div class="input-group">
+                <label for="cost">Estimated Cost:</label>
+                <p id="costDisplay"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo-quote">
+                <div class="footer-logo">
+                    <img src="l.png" alt="Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-quote">
+                    <p>"A nation's growth begins with the care of its fields."</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-section about-us">
+                <h3>About Us</h3>
+                <p>AgriKishan is dedicated to supporting farmers and agricultural businesses by providing valuable resources, tools, and insights. Our platform aims to empower farmers and help them grow their businesses sustainably.</p>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>Contact Us</h3>
+                <p><strong>Helpline:</strong> +1 234 567 890</p>
+                <p><strong>Email:</strong> <a href="mailto:support@agrikishan.com">support@agrikishan.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get the stored district and item from localStorage
+        const district = localStorage.getItem("district");
+        const item = localStorage.getItem("item");
+
+        // Display the selected district and item
+        if (district && item) {
+            document.getElementById("districtDisplay").innerText = district;
+            document.getElementById("itemDisplay").innerText = item.charAt(0).toUpperCase() + item.slice(1);
+            const cost = getCost(item);
+            document.getElementById("costDisplay").innerText = `₹${cost}`;
+        } else {
+            alert("No data found. Please go back and select a district and item.");
+        }
+
+        function getCost(item) {
+            const itemCosts = {
+                potato: 300,
+                tomato: 400,
+                onion: 500,
+                rice: 600,
+                wheat: 700,
+                corn: 800
+            };
+            return itemCosts[item] || 0; // Default to 0 if no item found
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

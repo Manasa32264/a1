@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suitable Crops</title>
+    <link rel="stylesheet" href="climate2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Suitable Crops for Your Region and Season</h1>
+        
+        <div class="form">
+            <div class="input-group">
+                <label for="district">District:</label>
+                <p id="districtDisplay"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="season">Season:</label>
+                <p id="seasonDisplay"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="crops">Suitable Crops:</label>
+                <p id="cropsDisplay"></p>
+            </div>
+        </div>
+
+        <script>
+            // Get the stored district and season from localStorage
+            const district = localStorage.getItem("district");
+            const season = localStorage.getItem("season");
+
+            // Display the selected district and season
+            if (district && season) {
+                document.getElementById("districtDisplay").innerText = district;
+                document.getElementById("seasonDisplay").innerText = season;
+                const crops = getSuitableCrops(district, season);
+                document.getElementById("cropsDisplay").innerText = crops.join(", ");
+            } else {
+                alert("No data found. Please go back and select a district and season.");
+            }
+
+            // Function to return suitable crops based on district and season
+            function getSuitableCrops(district, season) {
+                // Define suitable crops for each district and season
+                const cropsData = {
+                    "Bangalore": {
+                        "Summer": ["Tomato", "Cucumber", "Chili"],
+                        "Monsoon": ["Rice", "Onion", "Beans"],
+                        "Winter": ["Wheat", "Garlic", "Peas"],
+                        "Post-Monsoon": ["Brinjal", "Pumpkin"]
+                    },
+                    "Mysore": {
+                        "Summer": ["Tomato", "Carrot", "Spinach"],
+                        "Monsoon": ["Rice", "Beans", "Potato"],
+                        "Winter": ["Wheat", "Mustard", "Cauliflower"],
+                        "Post-Monsoon": ["Chili", "Cucumber"]
+                    },
+                    "Hubli": {
+                        "Summer": ["Wheat", "Chili", "Maize"],
+                        "Monsoon": ["Rice", "Cotton", "Soybean"],
+                        "Winter": ["Onion", "Garlic", "Peas"],
+                        "Post-Monsoon": ["Brinjal", "Cabbage"]
+                    },
+                    "Mangalore": {
+                        "Summer": ["Coconut", "Areca Nut"],
+                        "Monsoon": ["Rice", "Beans", "Pepper"],
+                        "Winter": ["Ginger", "Garlic", "Turmeric"],
+                        "Post-Monsoon": ["Tamarind", "Chili"]
+                    }
+                    // Add more districts and seasons as needed
+                };
+
+                // Return the suitable crops based on district and season
+                if (district in cropsData && season in cropsData[district]) {
+                    return cropsData[district][season];
+                }
+                return ["No suitable crops found"];
+            }
+        </script>
+    </div>
+</body>
+</html>
